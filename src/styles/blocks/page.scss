@@ -1,0 +1,115 @@
+@font-face {
+  font-family: Bad Script;
+  src: url("../../../public/fonts/BadScript-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Montserrat Alternates;
+  src: url("../../../public/fonts/MontserratAlternates-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+
+.page {
+  min-width: 280px;
+  font-family: "Bad Script", cursive;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background-color: $pink;
+
+    &--h1 {
+      max-width: 200px;
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__container {
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 1440px;
+
+    @include onTablet {
+      padding: 0 39px;
+    }
+
+    @include onDesktop {
+      padding: 0 55px;
+    }
+  }
+
+  &__section {
+    padding-bottom: 100px;
+    overflow-x: hidden;
+
+    &-flex {
+      display: flex;
+      justify-content: space-between;
+      // flex-wrap: wrap;
+    }
+
+    &--link {
+      color: $red;
+    }
+
+    &--title {
+      display: flex;
+      font-size: 36px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      justify-self: center;
+      color: $red;
+      text-shadow: 1px 3px 3px rgba(211, 75, 98, 0.5);
+      overflow: hidden;
+
+      margin: 30px auto;
+
+      @include onTablet {
+        margin: 50px 0;
+        font-size: 46px;
+      }
+
+      @include onDesktop {
+        margin: 70px 0;
+      }
+    }
+
+    &--subtitle {
+      text-align: center;
+      color: $red;
+      text-shadow: 1px 3px 3px rgba(211, 75, 98, 0.5);
+    }
+
+    &--text {
+      font-family: "Montserrat Alternates", sans-serif;
+      line-height: 120%;
+      margin: 0 0 30px;
+      text-shadow: 1px 1px 1px rgba(216, 54, 94, 0.5);
+
+      &-info {
+        font-size: 20px;
+        color: $red;
+
+        @include onDesktop {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+}
+
+.bold {
+  display: block;
+  padding-top: 5px;
+  font-weight: 700;
+}

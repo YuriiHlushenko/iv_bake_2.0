@@ -1,0 +1,17 @@
+.cake {
+  background-color: $pinkred;
+
+  &__grid {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &__slider {
+    &--subtitle {
+      text-align: justify;
+    }
+  }
+}

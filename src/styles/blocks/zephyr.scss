@@ -1,0 +1,36 @@
+.zephyr {
+  background-color: $pinkred;
+
+  &__flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    width: 100%;
+
+    @include onTablet {
+      width: 48%;
+    }
+
+    // @include onDesktop {
+    //   width: 23%;
+    // }
+
+    &--bigger {
+      width: 100%;
+
+      @include onTablet {
+        width: 48%;
+      }
+      @include onDesktop {
+        width: 23%;
+      }
+    }
+
+    &:last-of-type {
+      justify-self: flex-start;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+.card {
+  margin-bottom: 30px;
+  border-radius: 5px;
+  transition: all $duration;
+
+  &__photo {
+    @extend %bacgroundPosition;
+    transition: all $duration;
+    border-radius: 5px;
+    position: relative;
+
+    &--img {
+      display: block;
+      width: 100%;
+      transition: all $duration;
+      border-radius: 5px;
+      box-shadow: 0 0 8px rgba(211, 75, 98, 0.7);
+      cursor: pointer;
+    }
+
+    &--touch {
+      position: absolute;
+      width: 50px;
+      bottom: 20px;
+      right: 20px;
+      animation: scale 1.2s infinite linear;
+    }
+  }
+
+  @include onTablet {
+    &:hover {
+      box-shadow: 0 0 8px rgba(211, 75, 98, 0.7);
+      transform: scale(1.02);
+
+      .card__photo--img {
+        // opacity: 0;
+
+        &-feedback {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &--hover {
+    box-shadow: 0 0 8px rgba(211, 75, 98, 0.7);
+    transform: scale(1.02);
+
+    .card__photo--img {
+      // opacity: 0;
+
+      &-feedback {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__description {
+    padding: 15px 10px;
+    text-shadow: 1px 1px 1px rgba(212, 89, 114, 0.3);
+
+    @include onTablet {
+      padding: 20px;
+    }
+
+    &--bento,
+    &--zephyr {
+      font-size: 14px;
+
+      @include onTablet {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 22px;
+    margin: 0 0 10px;
+    text-align: center;
+    color: $red;
+  }
+
+  &__about {
+    // font-size: 20px;
+    white-space: pre-wrap;
+    font-family: "Montserrat Alternates", sans-serif;
+    color: $red;
+    margin: 0 0 20px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    margin: 0;
+    font-family: "Montserrat Alternates", sans-serif;
+    // text-align: center;
+    color: $red;
+    line-height: 150%;
+  }
+}
+
+.desserts__card .card__description {
+  font-size: 14px;
+
+  @include onTablet {
+    font-size: 16px;
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

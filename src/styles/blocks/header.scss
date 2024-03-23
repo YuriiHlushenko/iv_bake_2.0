@@ -1,0 +1,106 @@
+.header {
+  position: relative;
+  background-color: $pinkred;
+  border-radius: 0 0 10px 10px;
+
+  @include onTablet {
+    border-radius: 0 0 10px 10px;
+  }
+
+  &__top {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 10px 0;
+
+    @include onTablet {
+      padding: 20px 39px;
+    }
+
+    @include onDesktop {
+      justify-content: space-between;
+      padding: 20px 55px;
+    }
+
+    &--menu {
+      display: none;
+      
+
+      @include onDesktop {
+        display: flex;
+        width: 78%;
+        margin: auto 0;
+        padding: 0;
+        justify-content: space-between;
+        // align-items: center;
+      }
+    }
+  }
+
+  &__logo {
+    display: block;
+    transition: opacity $duration;
+    height: 100px;
+    box-shadow: 0 0 8px rgba(211, 75, 98, 0.7),
+      inset 0 0 8px rgba(211, 75, 98, 0.7);
+    border-radius: 50%;
+
+    @include onTablet {
+      height: 120px;
+    }
+
+    @include onDesktop {
+      height: 210px;
+    }
+
+    &--img {
+      height: 100%;
+    }
+  }
+
+  &__menu {
+    border: none;
+    background-color: transparent;
+  }
+
+  &__menu,
+  &__call {
+    @extend %menuPosition;
+
+    &--svg {
+      fill: $red;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__call {
+    @extend %callPosition;
+  }
+}
+
+.fixed {
+  display: none;
+  font-family: "Montserrat Alternates", sans-serif;
+
+  @include onDesktop {
+    flex-direction: column;
+    display: flex;
+    position: fixed;
+    right: 8px;
+    top: 260px;
+    z-index: 4;
+  }
+
+  @media (max-height: 685px) {
+    top: 10%;
+  }
+
+  @media (min-width: 1550px) {
+    right: calc((100vw - 1440px) / 2 - (100vw - 1550px) / 4 - 50px);
+  }
+}

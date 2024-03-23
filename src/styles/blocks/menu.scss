@@ -1,0 +1,172 @@
+.menu {
+  position: fixed;
+  height: 100vh;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $pink;
+  transform: translateX(-100%);
+  color: $red;
+
+  transition: transform $duration;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__logo--img {
+    height: 100%;
+  }
+
+  &__item {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $red;
+    margin: 0 0 20px;
+
+    @include onDesktop {
+      margin: 0;
+    }
+
+    &--contacts {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-call {
+        fill: $red;
+      }
+    }
+  }
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__cross {
+    border: none;
+    background-color: transparent;
+    @extend %menuPosition;
+    z-index: 4;
+    transition: opacity $duration;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    @media (min-width: 1440px) {
+      left: calc((100vw - 1440px) / 2);
+    }
+
+    &--svg {
+      fill: $red;
+    }
+  }
+
+  &__list {
+    height: max-content;
+    width: max-content;
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 0 40px;
+    max-width: 1440px;
+    list-style: none;
+
+    @include onTablet {
+      padding: 40px 0 60px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 48px;
+    }
+    transition: 0.5s;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none;
+    color: $red;
+    line-height: 120%;
+    text-shadow: 1px 3px 5px rgba(211, 75, 98, 0.5),
+      1px 1px 1px rgba(206, 111, 130, 0.2);
+
+    transition: all $duration;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+    }
+
+    &:hover {
+      transform: translateY(-15%) scale(1.02);
+    }
+
+    &--img {
+      margin-right: 10px;
+      height: 50px;
+
+      @include onDesktop {
+        height: 60px;
+      }
+    }
+
+    &--call,
+    &--map,
+    &--viber {
+      &-tooltip {
+        padding: 5px;
+        border-radius: 10px;
+        background-color: $pink;
+        position: absolute;
+        right: 100%;
+        display: block;
+
+        width: max-content;
+        padding-right: 12px;
+        color: $red;
+        font-weight: 700;
+        font-size: 18px;
+        pointer-events: none;
+        opacity: 0;
+
+        transition: opacity $duration;
+      }
+
+      &:hover &-tooltip {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__icon {
+    height: 40px;
+    fill: $red;
+
+    &--map {
+      margin-right: 20px;
+    }
+
+    &--call {
+      display: block;
+      height: 35px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 15px;
+
+      &--call {
+        height: 40px;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.desserts {
+  background-color: $pink;
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    width: 48%;
+
+    @include onTablet {
+      width: 32%;
+    }
+    @include onDesktop {
+      width: 23%;
+    }
+
+    &:last-of-type {
+      justify-self: flex-start;
+    }
+  }
+}

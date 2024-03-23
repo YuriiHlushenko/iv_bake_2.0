@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Бенто",
+    "href": "#bento",
+    "imgSrc": "images/bento.svg",
+    "imgAlt": "бенто торт замовити житомир"
+  },
+  {
+    "title": "Торти на замовлення",
+    "href": "#cake",
+    "imgSrc": "images/cake.svg",
+    "imgAlt": "замовити торт житомир"
+  },
+  {
+    "title": "Candy Bar",
+    "href": "#candy",
+    "imgSrc": "images/corp.svg",
+    "imgAlt": "Корпоративні замовлення десертів, набори житомир"
+  },
+  {
+    "title": "Зефірні квіти",
+    "href": "#zephyr",
+    "imgSrc": "images/tulip.png",
+    "imgAlt": "зефірні букети квіти житомир"
+  },
+  {
+    "title": "Десерти",
+    "href": "#desserts",
+    "imgSrc": "images/dessert.svg",
+    "imgAlt": "десерти на замовлення житомир"
+  }
+]
